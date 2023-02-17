@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SewaIndex from '@/views/sewa/SewaIndex.vue'
-import SewaHistory from '@/views/sewa/SewaHistory.vue'
-import SewaShow from '@/views/sewa/SewaShow.vue'
-import CameraShow from '@/views/camera/CameraShow.vue'
+import SewaCreate from '@/views/sewa/SewaCreate.vue'
+import SewaList from '@/views/sewa/SewaList.vue'
+import SewaEdit from '@/views/sewa/SewaEdit.vue'
+import LoginPage from '@/views/login/LoginPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,18 +15,23 @@ const router = createRouter({
     },
     {
       path: '/camera/:id/detail',
-      name: 'camera.detail',
-      component: CameraShow
+      name: 'sewa.create',
+      component: SewaCreate
     },
     {
-      path: '/sewa/history',
+      path: '/sewa/list',
       name: 'sewa.history',
-      component: SewaHistory
+      component: SewaList
     },
     {
-      path: '/sewa/:id/detail',
-      name: 'sewa.show',
-      component: SewaShow
+      path: '/sewa/:id/edit',
+      name: 'sewa.edit',
+      component: SewaEdit
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginPage
     },
   ]
 })
